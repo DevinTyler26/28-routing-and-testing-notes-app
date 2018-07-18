@@ -4,6 +4,8 @@ import PropTypes from 'prop-types';
 const defaultState = {
   title: '',
   content: '',
+  completed: false,
+  editing: false,
 };
 
 export default class NoteForm extends React.Component {
@@ -36,7 +38,7 @@ export default class NoteForm extends React.Component {
         onChange={ this.handleChange }
       />
       <textarea 
-        cols="40" 
+        cols="60" 
         rows="5"
         name="content"
         placeholder="Write your note here"
@@ -51,4 +53,5 @@ export default class NoteForm extends React.Component {
 
 NoteForm.propTypes = {
   handleAddNote: PropTypes.func,
+  handleRemoveNote: PropTypes.func,
 };

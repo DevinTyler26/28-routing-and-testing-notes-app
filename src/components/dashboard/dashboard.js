@@ -17,7 +17,6 @@ export default class Dashboard extends React.Component {
     if (note.title === '') {
       return this.setState({ error: true });
     }
-
     note.createdOn = new Date();
     note._id = uuid();
     return this.setState((previousState) => {
@@ -27,17 +26,24 @@ export default class Dashboard extends React.Component {
       };
     });
   }
+
+  removeNote(index) {
+    this.setState({
+      notes: this.state.notes.filter((_, i) => i !== index),
+    });
+  }
   
   handleNotesList = () => {
     return (
       <ul>
         {
-          this.state.notes.map((note) => {
+          this.state.notes.map((note, index) => {
             return (
               <li key={note._id}>
                   <h2>{note.title}</h2>
                   {/* <h5>{note.createdOn}</h5> */}
                   <p>{note.content}</p>
+                  <button className="remove" onClick = {this.removeNote.bind(this, index)}>Remove Note</button>
             </li>
             );
           })
