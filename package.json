@@ -4,7 +4,8 @@
     "moduleNameMapper": {
       "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/src/__test__/mocks/styleMock.js",
       "\\.(css|less|scss)$": "<rootDir>/src/__test__/mocks/styleMock.js"
-    },
+    }
+  },
   "version": "1.0.0",
   "description": "![cf](http://i.imgur.com/7v5ASc8.png) 28: To Do App ===",
   "main": "webpack.common.js",
@@ -62,5 +63,5 @@
     "react-router-dom": "^4.3.1",
     "uuid": "^3.3.2"
   },
-  "homepage": "https://github.com/DevinTyler26/28-routing-and-testing-notes-app#readme"}
+  "homepage": "https://github.com/DevinTyler26/28-routing-and-testing-notes-app#readme"
 }
