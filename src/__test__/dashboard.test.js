@@ -13,7 +13,7 @@ describe('Dashboard testing', () => {
   afterEach(() => {
     mountedDashboard.unmount();
   });
-  test('Simple test for initail state', () => {
+  test('Simple test for initial state', () => {
 
   });
   test('Adding a new note to the state', () => {
