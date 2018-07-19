@@ -13,8 +13,60 @@ em { font-style: italic; }
 strong { font-weight: bold; }
 
 body {
-  background: $color-darkcyan;
+  background: $color-white;
   font-size: 16px;
+}
+
+.notes-container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.note-post:nth-child(odd) {
+  background-color: $color-darkgrey;
+}
+.note-post{
+  margin: 2%;
+  padding: 1%;
+  width: 22%;
+  height: 380px;
+  background-color: cornflowerblue;
+  border-radius: 30px;
+  align-content: center;
+}
+
+.note-title{
+  padding-bottom: 1%;
+  padding-left: 2%;
+  color: #fff;
+}
+
+.note-content{
+  min-height: 200px;
+  max-height: 60%;
+  padding: 3.5%;
+  padding-left: 6.25%;
+  width: 100%;
+  background-color: white;
+  border-radius: 30px;
+  overflow: scroll;
+}
+
+.note-remove{
+  margin-top: 6%;
+  margin-left: 2%;
+  padding: 1%;
+  width: 40%;
+  height: 11%;
+  background-color: white;
+  border-radius: 30px;
+}
+
+.note-date {
+  margin-bottom: 4%;
+  padding-left: 2%;
+  font-size: .75em;
 }
 
 #root {
@@ -31,7 +83,6 @@ blockquote {
     font-size: 9/($i + 2) * 1em;;
   }
 }
-
 
 // form
 label {

@@ -35,20 +35,20 @@ export default class Dashboard extends React.Component {
   
   handleNotesList = () => {
     return (
-      <ul>
+      <div className="notes-container">
         {
           this.state.notes.map((note, index) => {
             return (
-              <li key={note._id}>
-                  <h2>{note.title}</h2>
-                  {/* <h5>{note.createdOn}</h5> */}
-                  <p>{note.content}</p>
-                  <button className="remove" onClick = {this.removeNote.bind(this, index)}>Remove Note</button>
-            </li>
+              <div key={note._id} className="note-post">
+                  <h2 className="note-title">{note.title}</h2>
+                  {/* <h5 className="note-date">Created on: {note.createdOn.toDateString(null)}<br />{note.createdOn.toLocaleTimeString('en-US')}</h5> */}
+                  <p className="note-content">{note.content}</p>
+                  <button className="note-remove" onClick = {this.removeNote.bind(this, index)}>Remove Note</button>
+            </div>
             );
           })
         }
-      </ul>
+      </div>
     );
   }
 
