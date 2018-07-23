@@ -23,23 +23,43 @@ body {
   flex-wrap: wrap;
 }
 
+.note-buttons{
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex:  1 1 auto;
+  -webkit-flex:  1 1 auto;
+  -ms-flex:  1 1 auto;
+  flex:  1 1 auto;
+  margin: 0 auto;
+  max-width: 40%;
+}
+
 .note-post:nth-child(odd) {
   background-color: $color-darkgrey;
 }
 .note-post{
+  transition: 100ms;
   margin: 2%;
   padding: 1%;
-  width: 22%;
-  height: 380px;
+  width: 40%;
+  height: 304px;
   background-color: cornflowerblue;
   border-radius: 30px;
   align-content: center;
 }
 
 .note-title{
+  font-size: 1.5em;
   padding-bottom: 1%;
-  padding-left: 2%;
+  padding-left: 4%;
   color: #fff;
+}
+
+.flex-buttons{
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
 }
 
 .note-content{
@@ -51,16 +71,7 @@ body {
   background-color: white;
   border-radius: 30px;
   overflow: scroll;
-}
-
-.note-remove{
   margin-top: 6%;
-  margin-left: 2%;
-  padding: 1%;
-  width: 40%;
-  height: 11%;
-  background-color: white;
-  border-radius: 30px;
 }
 
 .note-date {
