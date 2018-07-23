@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.com/DevinTyler26/28-routing-and-testing-notes-app.svg?branch=lab-28)](https://travis-ci.com/DevinTyler26/28-routing-and-testing-notes-app)
 ![cf](http://i.imgur.com/7v5ASc8.png) 28: To Do App
 ===
 

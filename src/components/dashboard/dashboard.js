@@ -32,7 +32,15 @@ export default class Dashboard extends React.Component {
       notes: this.state.notes.filter((_, i) => i !== index),
     });
   }
-  
+	
+	handleUdpateNote = (noteToUpdate) => {
+	  return this.setState((previousState) => {
+	    return {
+	      notes: previousState.notes.map(note => (note._id === noteToUpdate._id ? noteToUpdate : note)),
+	    };
+	  });
+	}
+   
   handleNotesList = () => {
     return (
       <div className="notes-container">
