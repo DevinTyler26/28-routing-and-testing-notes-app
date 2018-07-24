@@ -23,14 +23,17 @@ body {
   flex-wrap: wrap;
 }
 
+.note-buttons:hover {
+  background: rgb(255, 101, 101);
+}
+
 .note-buttons{
-  -webkit-box-flex: 1 1 auto;
-  -moz-box-flex:  1 1 auto;
-  -webkit-flex:  1 1 auto;
-  -ms-flex:  1 1 auto;
-  flex:  1 1 auto;
   margin: 0 auto;
-  max-width: 40%;
+  width: 32%;
+  overflow: hidden;
+  border-radius: 30px;
+  color: #fff;
+  
 }
 
 .note-post:nth-child(odd) {
@@ -52,14 +55,6 @@ body {
   padding-bottom: 1%;
   padding-left: 4%;
   color: #fff;
-}
-
-.flex-buttons{
-  display: -webkit-box;
-  display: -moz-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
 }
 
 .note-content{

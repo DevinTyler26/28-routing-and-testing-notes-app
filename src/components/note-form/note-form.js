@@ -29,6 +29,8 @@ export default class NoteForm extends React.Component {
 
   render() {
     const buttonText = this.props.note ? 'Update Note' : 'Create Note';
+    const title = this.props.note ? 'updateTitle' : 'title';
+    const content = this.props.note ? 'updateContent' : 'content';
     return (
       <form onSubmit={ this.handleSubmit } data-cy="note-form">
       <input
@@ -37,7 +39,7 @@ export default class NoteForm extends React.Component {
         placeholder="Note title"
         value={ this.state.title }
         onChange={ this.handleChange }
-        data-cy="title"
+        data-cy={title}
       />
       <textarea 
         cols="60" 
@@ -46,9 +48,9 @@ export default class NoteForm extends React.Component {
         placeholder="Write your note here"
         value={ this.state.content }
         onChange={ this.handleChange }
-        data-cy="content"
+        data-cy={content}
       />
-      <button type="submit">{buttonText}</button>
+      <button data-cy="note-form-submit" type="submit">{buttonText}</button>
       </form>
     );
   }
