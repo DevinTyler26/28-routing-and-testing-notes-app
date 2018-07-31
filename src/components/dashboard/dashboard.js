@@ -1,6 +1,8 @@
 import React from 'react';
 import uuid from 'uuid/v4';
 import NoteForm from '../note-form/note-form';
+import NoteItem from '../note-item/note-item';
+import { renderIf } from '../../lib/utils';
 import './dashboard.scss';
 
 export default class Dashboard extends React.Component {
@@ -27,23 +29,34 @@ export default class Dashboard extends React.Component {
     });
   }
 
-  removeNote(index) {
-    this.setState({
-      notes: this.state.notes.filter((_, i) => i !== index),
+  handleRemoveNote = (noteToRemove) => {
+    this.setState((previousState) => {
+      return {
+        notes: previousState.notes.filter(note => note._id !== noteToRemove._id),
+      };
     });
   }
-  
+
+  handleUpdateNote = (noteToUpdate) => {
+    return this.setState((previousState) => {
+      return {
+        notes: previousState.notes.map(note => (note._id === noteToUpdate._id ? noteToUpdate : note)),
+      };
+    });
+  }
+   
   handleNotesList = () => {
     return (
       <div className="notes-container">
         {
-          this.state.notes.map((note, index) => {
+          this.state.notes.map((note) => {
             return (
               <div key={note._id} className="note-post">
-                  <h2 className="note-title">{note.title}</h2>
-                  {/* <h5 className="note-date">Created on: {note.createdOn.toDateString(null)}<br />{note.createdOn.toLocaleTimeString('en-US')}</h5> */}
-                  <p className="note-content">{note.content}</p>
-                  <button className="note-remove" onClick = {this.removeNote.bind(this, index)}>Remove Note</button>
+              <NoteItem
+                  note={note}
+                  handleUpdateNote={this.handleUpdateNote}
+                  handleRemoveNote={this.handleRemoveNote}                  
+              />
             </div>
             );
           })
@@ -55,9 +68,9 @@ export default class Dashboard extends React.Component {
   render() {
     return (
       <section className="dashboard">
-        <NoteForm handleAddNote={ this.handleAddNote } />
+        <NoteForm handleComplete={ this.handleAddNote } />
         {
-          this.state.error && <h2 className="error">You must enter a note title.</h2>
+          renderIf(this.state.error && <h2 className="error">You must enter a note title.</h2>)
         }
         { this.handleNotesList() }
       </section>

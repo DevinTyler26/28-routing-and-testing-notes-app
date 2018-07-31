@@ -1,10 +1,11 @@
 {
   "extends": ["airbnb-base","plugin:jest/recommended", "plugin:react/recommended"],
   "env": {
-    "browser": true
+    "browser": true,
+    "cypress/globals": true
   },
   "parser": "babel-eslint",
-  "plugins": ["jest", "react"],
+  "plugins": ["jest", "react", "cypress"],
   "rules": {
     "arrow-body-style": "off",
     "global-require": "off",
